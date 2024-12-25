@@ -1,5 +1,6 @@
-// counter.js
-
+document.querySelector('.nav-toggle').addEventListener('click', function () {
+  document.querySelector('.nav-links').classList.toggle('active');
+});
 // Function to animate counters
 const counters = document.querySelectorAll('.counter');
 
