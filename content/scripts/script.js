@@ -1,6 +1,12 @@
-document.querySelector('.nav-toggle').addEventListener('click', function () {
-  document.querySelector('.nav-links').classList.toggle('active');
+
+// Toggle the visibility of the navigation menu on smaller screens
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
 });
+
 // Function to animate counters
 const counters = document.querySelectorAll('.counter');
 
