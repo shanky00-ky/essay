@@ -10,16 +10,16 @@ body {
   background-color: white
   color: #f8f9fa;
 }
-/* Navbar Styles - Enhanced for Responsiveness */
+/* General Navbar Styles */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: #333; /* Dark grey background */
+  background: #333; /* Dark grey */
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
   z-index: 10;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -27,67 +27,57 @@ body {
 .navbar .logo {
   display: flex;
   align-items: center;
-  white-space: nowrap; /* Prevents text from wrapping */
 }
 
 .navbar .logo img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin-right: 10px;
 }
 
 .navbar .logo span {
-  font-size: 22px; /* Slightly bigger text */
-  font-weight: 600; /* Slightly bold */
-  color: #fff; /* White color for the logo text */
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
 }
 
 .navbar .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
-  flex-wrap: wrap; /* Allows links to wrap if necessary on small screens */
-  transition: max-height 0.3s ease, opacity 0.3s ease;
-  max-height: 500px; /* Default for large screens */
-  overflow: hidden;
+  gap: 15px;
 }
 
 .navbar .nav-links a {
+  color: #f8f9fa;
+  text-decoration: none;
   font-size: 16px;
-  padding: 8px 12px;
-  color: #f8f9fa; /* Light text color for links */
-  text-align: center;
-  text-transform: uppercase; /* Makes the text all uppercase */
-  font-weight: 500; /* Medium weight for links */
-  transition: color 0.3s ease;
+  text-transform: uppercase;
+  transition: color 0.3s;
 }
 
 .navbar .nav-links a:hover {
-  color: #0dcaf0; /* Highlight links on hover */
+  color: #0dcaf0;
 }
 
 .navbar .cta-btn {
-  padding: 10px 20px;
-  background: #0dcaf0; /* Light blue button */
+  padding: 8px 15px;
+  background: #0dcaf0;
+  color: #111;
   border: none;
-  color: #111; /* Dark text color */
-  border-radius: 30px; /* Rounded button edges */
+  border-radius: 20px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 600; /* Make the button text slightly bold */
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .navbar .cta-btn:hover {
-  background: #0b95c2; /* Darker blue when hovering */
-  transform: scale(1.05); /* Slight zoom effect */
+  background: #0b95c2;
 }
 
-/* Navbar Toggle Styles */
+/* Hamburger Menu Toggle */
 .nav-toggle {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
   cursor: pointer;
 }
 
@@ -96,45 +86,32 @@ body {
   height: 3px;
   background-color: white;
   border-radius: 2px;
-  transition: transform 0.3s ease;
 }
 
-/* Responsive Fix for Smaller Screens */
+/* Responsive Navbar Styles */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px 20px;
   }
 
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
+    background: #444;
+    padding: 10px 20px;
     gap: 10px;
-    margin-top: 10px;
-    max-height: 0; /* Hidden by default */
-    opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
   }
 
   .nav-links.active {
     display: flex;
-    max-height: 500px; /* Adjust to fit content */
-    opacity: 1;
   }
 
   .nav-toggle {
     display: flex;
-    margin-top: 10px;
-  }
-
-  .cta-btn {
-    align-self: flex-end;
-    margin-top: 10px;
   }
 }
-
 
 /* About Section Styles */
 .about-us-section {
