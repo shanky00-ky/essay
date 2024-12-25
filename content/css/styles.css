@@ -10,8 +10,7 @@ body {
   background-color: white
   color: #f8f9fa;
 }
-
-/* Navbar Styles - Updated for Better Visibility */
+/* Navbar Styles - Enhanced for Responsiveness */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -22,9 +21,7 @@ body {
   width: 100%;
   top: 0;
   z-index: 10;
-  box-shadow: 0 4px 6px rgb(230, 225, 225);
-  overflow: hidden;
-  margin-left: -0px; /* Shift navbar to the left */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .logo {
@@ -50,6 +47,9 @@ body {
   align-items: center;
   gap: 20px;
   flex-wrap: wrap; /* Allows links to wrap if necessary on small screens */
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  max-height: 500px; /* Default for large screens */
+  overflow: hidden;
 }
 
 .navbar .nav-links a {
@@ -83,25 +83,6 @@ body {
   transform: scale(1.05); /* Slight zoom effect */
 }
 
-/* Responsive Fix for Smaller Screens */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: -20px; /* Keep the navbar shifted left */
-  }
-
-  .navbar .nav-links {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .navbar .cta-btn {
-    align-self: flex-end; /* Adjust button alignment for smaller screens */
-    margin-top: 10px;
-  }
-}
 /* Navbar Toggle Styles */
 .nav-toggle {
   display: none;
@@ -114,9 +95,11 @@ body {
   width: 25px;
   height: 3px;
   background-color: white;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
 }
 
-/* Media Queries for Responsive Navbar */
+/* Responsive Fix for Smaller Screens */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -130,10 +113,15 @@ body {
     width: 100%;
     gap: 10px;
     margin-top: 10px;
+    max-height: 0; /* Hidden by default */
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
   }
 
   .nav-links.active {
     display: flex;
+    max-height: 500px; /* Adjust to fit content */
+    opacity: 1;
   }
 
   .nav-toggle {
@@ -146,6 +134,7 @@ body {
     margin-top: 10px;
   }
 }
+
 
 /* About Section Styles */
 .about-us-section {
